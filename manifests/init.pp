@@ -27,7 +27,9 @@ class transmission_daemon (
   validate_string($group_name)
   validate_string($blocklist_url)
   validate_string($download_dir)
+  validate_absolute_path($incomplete_dir)
   validate_string($incomplete_dir)
+  validate_absolute_path($incomplete_dir)
   validate_string($rpc_password)
   validate_array($rpc_whitelist)
 
