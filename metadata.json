@@ -1,0 +1,16 @@
+{
+  "name": "waveclaw-transmission_daemon",
+  "version": "0.1.0",
+  "author": "waveclaw",
+  "summary": "Deploy the daemonized transmission service.",
+  "license": "Apache 2.0",
+  "source": "https://build.opensuse.org/project/show/home:ghostlyrat",
+  "project_page": "https://github.com/waveclaw/transmission_daemon",
+  "issues_url": "https://github.com/waveclaw/transmission_daemon",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 1.0.0"
+    }
+  ]
+}
