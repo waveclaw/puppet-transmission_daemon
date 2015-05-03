@@ -13,7 +13,8 @@
 
 ## Overview
 
-Install Transmission-daemon.
+Install Transmission-daemon, part of Transmission from [https://trac.transmissionbt.com].
+
 
 ## Module Description
 
@@ -49,6 +50,8 @@ Accepts various default overrides in hiera or as parameters to the base class.
  * rpc\_whitelist - a whitelist, defaulting to the IPv4 localhost address, for accesping connections
 
 The rpc\_whitelist must contain the IP address of desktops, laptops, server or other systems that want to use the Web UI.  This is a comma-delimited string value, not an array!
+
+For more configuration details, consider providing a custom configuration file.  See [https://trac.transmissionbt.com/wiki/ConfigFiles] for the configuration format.
 
 ## Reference
 
