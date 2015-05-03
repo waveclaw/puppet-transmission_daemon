@@ -23,11 +23,11 @@ Configures and runs the transmission-daemon bittorrent service with a web UI on 
 
 ### What transmission_daemon affects
 
-* Updates /var/lib/transmission/.config.
+ * Updates /var/lib/transmission/.config.
 
 ### Setup Requirements **OPTIONAL**
 
-* Requires access to a package repository containing at least version 0.21 of transission-daemon.
+ * Requires access to a package repository containing at least version 0.21 of transission-daemon.
 
 
 ### Beginning with transmission_daemon
@@ -36,25 +36,27 @@ Configures and runs the transmission-daemon bittorrent service with a web UI on 
 ## Usage
 
 Accepts various default overrides in hiera or as parameters to the base class.
-* repo\_name - list of repositories to pull packages from.
-* package\_name - list of packages to install
-* service\_name - name of services to start
-* user\_name - the user to setup everything under; defaults to 'transmission'
-* group\_name - the group used for the running user; defaults to 'nogroup'
-* blocklist\_url - a URL to obtain new blocklist files; defaults to the biglist.p2p archive on bitsurge.net.
-* download\_dir - where to keep downloaded files
-* incomplete\_dir - where to work on partial files
-* rpc\_password - the RPC password is one is used
-* rpc\_whitelist - a whitelist, defaulting to the IPv4 localhost address, for accesping connections
+
+ * repo\_name - list of repositories to pull packages from.
+ * package\_name - list of packages to install
+ * service\_name - name of services to start
+ * user\_name - the user to setup everything under; defaults to 'transmission'
+ * group\_name - the group used for the running user; defaults to 'nogroup'
+ * blocklist\_url - a URL to obtain new blocklist files; defaults to the biglist.p2p archive on bitsurge.net.
+ * download\_dir - where to keep downloaded files
+ * incomplete\_dir - where to work on partial files
+ * rpc\_password - the RPC password is one is used
+ * rpc\_whitelist - a whitelist, defaulting to the IPv4 localhost address, for accesping connections
 
 The rpc\_whitelist must contain the IP address of desktops, laptops, server or other systems that want to use the Web UI.  This is a comma-delimited string value, not an array!
 
 ## Reference
 
 Contains
-* repo - custom repositories for obtaining packages
-* user - customizable users and groups for running the service
-* package, config, service trifecta as expected fo a service module
+
+ * repo - custom repositories for obtaining packages
+ * user - customizable users and groups for running the service
+ * package, config, service trifecta as expected fo a service module
 
 ## Limitations
 
