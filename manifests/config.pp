@@ -37,7 +37,7 @@ class transmission_daemon::config(
       ensure  => file,
       content => $config_file_content,
     }
-  } elsif $config_file_template != undef { 
+  } elsif $config_file_template != undef {
     file { $_config_file:
       ensure  => file,
       content => $config_file_template,
