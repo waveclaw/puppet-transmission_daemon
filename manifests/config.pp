@@ -8,9 +8,10 @@ class transmission_daemon::config(
   $config_file_template     = undef,
 ){
   $_config_file = '/var/lib/transmission/.config/transmission/settings.json'
-  $_dirs = ['/var/lib/transmission/.config/transmission',
-    '/var/lib/transmission/.config/',
+  $_dirs = [
     '/var/lib/transmission/',
+    '/var/lib/transmission/.config/',
+    '/var/lib/transmission/.config/transmission',
     $transmission_daemon::download_dir,
     $transmission_daemon::incomplete_dir,
   ]
