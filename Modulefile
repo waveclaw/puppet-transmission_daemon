@@ -8,3 +8,5 @@ description   ''
 project_page  'https://github.com/waveclaw/transmission_daemon'
 
 dependency 'puppetlabs/stdlib'
+dependency 'puppetlabs/apt'
+dependency 'puppet/zypprepo'

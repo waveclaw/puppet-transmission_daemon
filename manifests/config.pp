@@ -2,7 +2,12 @@
 #
 # This class is called from transmission_daemon for service config.
 #
-class transmission_daemon::config {
+class transmission_daemon::config(
+  $config_file_source       = undef,
+  $config_file_content      = undef,
+  $config_file_template     = undef,
+){
+  $_config_file = '/var/lib/transmission/.config/transmission/settings.json'
   $_dirs = ['/var/lib/transmission/.config/transmission',
     '/var/lib/transmission/.config/',
     '/var/lib/transmission/',
@@ -22,8 +27,25 @@ class transmission_daemon::config {
   file { $_dirs:
     ensure => directory,
   }
-  file { '/var/lib/transmission/.config/transmission/settings.json':
-    ensure  => present,
-    content => template('transmission_daemon/settings.json.erb')
+  if $config_file_source != undef {
+    file { $_config_file:
+      ensure => file,
+      source => $config_file_source,
+    }
+  } elsif $config_file_content != undef {
+    file { $_config_file:
+      ensure  => file,
+      content => $config_file_content,
+    }
+  } elsif $config_file_template != undef { 
+    file { $_config_file:
+      ensure  => file,
+      content => $config_file_template,
+    }
+  } else {
+    file { $_config_file:
+      ensure  => file,
+      content => template('transmission_daemon/settings.json.erb'),
+    }
   }
 }
