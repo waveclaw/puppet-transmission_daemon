@@ -20,8 +20,8 @@ class transmission_daemon::config(
   $_rpc_password   =  $transmission_daemon::rpc_password
   $_rpc_whitelist  =  join(flatten($transmission_daemon::rpc_whitelist), ',')
   File {
-    owner  => $transmission::user_name,
-    group  => $transmission::group_name,
+    owner  => $transmission_daemon::user_name,
+    group  => $transmission_daemon::group_name,
     mode   => '0750',
   }
   file { $_dirs:
