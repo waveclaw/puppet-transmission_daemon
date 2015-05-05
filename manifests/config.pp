@@ -8,9 +8,10 @@ class transmission_daemon::config(
   $config_file_template     = undef,
 ){
   $_config_file = '/var/lib/transmission/.config/transmission/settings.json'
-  $_dirs = ['/var/lib/transmission/.config/transmission',
-    '/var/lib/transmission/.config/',
+  $_dirs = [
     '/var/lib/transmission/',
+    '/var/lib/transmission/.config/',
+    '/var/lib/transmission/.config/transmission',
     $transmission_daemon::download_dir,
     $transmission_daemon::incomplete_dir,
   ]
@@ -20,8 +21,8 @@ class transmission_daemon::config(
   $_rpc_password   =  $transmission_daemon::rpc_password
   $_rpc_whitelist  =  join(flatten($transmission_daemon::rpc_whitelist), ',')
   File {
-    owner  => $transmission::user_name,
-    group  => $transmission::group_name,
+    owner  => $transmission_daemon::user_name,
+    group  => $transmission_daemon::group_name,
     mode   => '0750',
   }
   ensure_resource ('file', $_dirs, {
