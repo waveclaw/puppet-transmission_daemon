@@ -26,9 +26,9 @@ Configures and runs the transmission-daemon bittorrent service with a web UI on 
 
  * Updates /var/lib/transmission/.config.
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements 
 
- * Requires access to a package repository containing at least version 0.21 of transission-daemon.
+Requires access to a package repository containing at least version 0.21 of transission-daemon.
 
 
 ### Beginning with transmission_daemon
